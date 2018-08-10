@@ -110,4 +110,18 @@ describe('calculator functionality', function() {
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('4888962')
   })
+
+
+  // if you divide by zero, what is the effect?
+  //It returns Infinity instead of 0
+  it('should be able to divide by zero', function(){
+    element(by.css('#number2')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number0')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('0')
+  })
+
+
+
 });
