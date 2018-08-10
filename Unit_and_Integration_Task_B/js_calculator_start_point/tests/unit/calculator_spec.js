@@ -63,5 +63,11 @@ describe('calculator', function () {
   })
 
   // - calculator.clearClick()
-  
+  it('should be able to clear the numbers', function(){
+    calculator.numberClick(5);
+    calculator.operatorClick('+');
+    calculator.numberClick(5);
+    calculator.clearClick();
+    assert.equal(calculator.runningTotal, 0);
+  })
 });
