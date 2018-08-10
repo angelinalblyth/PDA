@@ -114,12 +114,13 @@ describe('calculator functionality', function() {
 
   // if you divide by zero, what is the effect?
   //It returns Infinity instead of 0
+  //Changed the calculator.js file and now if a user tried to divide by 0 they get an error message. 
   it('should be able to divide by zero', function(){
     element(by.css('#number2')).click();
     element(by.css('#operator_divide')).click();
     element(by.css('#number0')).click();
     element(by.css('#operator_equals')).click();
-    expect(running_total.getAttribute('value')).to.eventually.equal('0')
+    expect(running_total.getAttribute('value')).to.eventually.equal('Not a number')
   })
 
 
